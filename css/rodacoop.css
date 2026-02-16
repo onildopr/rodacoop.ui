@@ -1,0 +1,145 @@
+:root{
+  --rk-bg: #0b0b0b;
+  --rk-panel: rgba(255,255,255,0.96);
+  --rk-text: #f1f1f1;
+  --rk-muted: #b7b7b7;
+  --rk-orange: #ff8c00;
+  --rk-orange-2: #e67600;
+  --rk-border: rgba(255,255,255,0.08);
+}
+
+/* Base */
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--rk-bg);
+  color: var(--rk-text);
+}
+
+/* Topbar padrão (canal de volta) */
+.rk-topbar{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #000;
+  border-bottom: 3px solid var(--rk-orange);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+}
+
+.rk-brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  min-width: 180px;
+}
+
+.rk-brand img{ height: 34px; width: auto; }
+.rk-title{
+  font-weight: 700;
+  letter-spacing: .2px;
+  font-size: 14px;
+  line-height: 1.1;
+}
+.rk-subtitle{
+  font-size: 12px;
+  color: var(--rk-muted);
+  margin-top: 2px;
+}
+
+.rk-actions{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.rk-btn{
+  appearance: none;
+  border: 1px solid var(--rk-orange);
+  background: var(--rk-orange);
+  color: #111;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .15s ease;
+  font-size: 13px;
+}
+.rk-btn:hover{ background: var(--rk-orange-2); border-color: var(--rk-orange-2); }
+.rk-btn-outline{
+  background: transparent;
+  color: var(--rk-orange);
+}
+.rk-btn-outline:hover{
+  background: var(--rk-orange);
+  color:#111;
+}
+
+/* Marca d’água opcional no MAIN */
+main.rk-main{
+  position: relative;
+  min-height: calc(100vh - 58px);
+  background: radial-gradient(circle at top, #000 0%, #000 70%);
+  overflow: hidden;
+}
+main.rk-main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: var(--rk-watermark, none);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 360px auto;
+  opacity: .35;
+  pointer-events:none;
+}
+main.rk-main > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Padrão Rodacoop “laranja” em cima do Bootstrap */
+.btn-primary, .btn-success{
+  background-color: var(--rk-orange) !important;
+  border-color: var(--rk-orange) !important;
+  color: #fff !important;
+}
+.btn-primary:hover, .btn-success:hover{
+  background-color: var(--rk-orange-2) !important;
+  border-color: var(--rk-orange-2) !important;
+}
+.btn-outline-primary, .btn-outline-success, .btn-outline-info{
+  color: var(--rk-orange) !important;
+  border-color: var(--rk-orange) !important;
+}
+.btn-outline-primary:hover, .btn-outline-success:hover, .btn-outline-info:hover{
+  background-color: var(--rk-orange) !important;
+  color: #fff !important;
+}
+
+/* Cards / alerts padrão */
+.card, .alert{
+  background-color: var(--rk-panel) !important;
+  border-left: 4px solid var(--rk-orange) !important;
+  color: #212529 !important;
+}
+
+/* Sidebar clara */
+.sidebar{
+  background: linear-gradient(180deg, #fff6eb 0%, #fbe2c6 100%) !important;
+  border-right: 4px solid var(--rk-orange) !important;
+}
+.sidebar, .sidebar *{ color: #212529 !important; }
+
+/* Títulos destacados */
+h2,h3,h4,h5{ color: var(--rk-orange) !important; }
+.progress-bar{ background-color: var(--rk-orange) !important; }
+
+/* Utilitários */
+.rk-hide{ display:none !important; }

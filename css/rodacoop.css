@@ -349,6 +349,10 @@ body.rk-scope .rk-back-btn:hover{
   transform: translateY(-2px);
   color:#fff;
 }
+.list-section {
+    max-height: 350px;
+    overflow-y: auto;
+}
 
 /* =========================================================
    9) Utilitários

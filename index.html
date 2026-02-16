@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Operacional Rodacoop</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+header {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #ff6600;
+}
+
+header img {
+    height: 70px;
+}
+
+h1 {
+    margin: 10px 0 0 0;
+    font-weight: normal;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 60px 20px;
+}
+
+.card {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    border: 1px solid #222;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #ff6600;
+}
+
+.card h2 {
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ff6600;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background: #ff8533;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    border-top: 1px solid #222;
+    font-size: 13px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="./img/logorodacoop.png" alt="Rodacoop">
+    <h1>Painel Operacional</h1>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>📦 Recebimento de Rota</h2>
+<p>Controle e registro das rotas recebidas.</p>
+<a href="https://onildopr.github.io/recebimento-de-rota/">
+Acessar Sistema
+</a>
+</div>
+
+<div class="card">
+<h2>📋 Conferência Secundária</h2>
+<p>Validação complementar das cargas.</p>
+<a href="https://onildopr.github.io/Conferencia-segundaria/">
+Acessar Sistema
+</a>
+</div>
+
+<div class="card">
+<h2>🌙 Validação Noturna</h2>
+<p>Processos e verificações do turno noturno.</p>
+<a href="https://onildopr.github.io/validacao-noturna/">
+Acessar Sistema
+</a>
+</div>
+
+</div>
+
+<footer>
+Rodacoop © 2026 - Painel Central de Operações
+</footer>
+
+</body>
+</html>

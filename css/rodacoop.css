@@ -357,6 +357,10 @@ body.rk-scope .rk-back-btn:hover{
     background: #ff6600; /* laranja rodacoop */
     border-radius: 10px;
 }
+#conference-interface .list-section{
+  max-height: calc(100vh - 360px); /* ajuste esse 360px conforme seus títulos/botões */
+  overflow-y: auto;
+}
 
 /* =========================================================
    9) Utilitários

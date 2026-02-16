@@ -143,3 +143,23 @@ h2,h3,h4,h5{ color: var(--rk-orange) !important; }
 
 /* Utilitários */
 .rk-hide{ display:none !important; }
+/* Botão flutuante voltar */
+.rk-back-btn{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: var(--rk-orange);
+  color: #111;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: 0.2s ease;
+  z-index: 9999;
+}
+
+.rk-back-btn:hover{
+  background: var(--rk-orange-2);
+  transform: translateY(-2px);
+}

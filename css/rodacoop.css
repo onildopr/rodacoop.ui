@@ -1,4 +1,11 @@
+/* =========================================================
+   RODACOOP UI — Design System Unificado
+   (preto/laranja + classes do "Fechamento de Rota")
+   ========================================================= */
+
+/* ---------- Tokens ---------- */
 :root{
+  /* Tema Rodacoop (escuro) */
   --rk-bg: #0b0b0b;
   --rk-panel: rgba(255,255,255,0.96);
   --rk-text: #f1f1f1;
@@ -6,19 +13,32 @@
   --rk-orange: #ff8c00;
   --rk-orange-2: #e67600;
   --rk-border: rgba(255,255,255,0.08);
+
+  /* Tokens do tema “bonito” (Fechamento) */
+  --brand-orange: #ff6a00;
+  --brand-orange-2: #ff8a2a;
+  --brand-black: #0f0f10;
+  --brand-gray: #1b1b1d;
+  --brand-border: rgba(255,106,0,.25);
 }
 
-/* Base */
+/* =========================================================
+   1) Escopo do tema
+   Use <body class="rk-scope"> para aplicar em cada módulo
+   ========================================================= */
 html, body { height: 100%; }
-body{
+
+body.rk-scope{
   margin: 0;
   font-family: Arial, sans-serif;
   background: var(--rk-bg);
   color: var(--rk-text);
 }
 
-/* Topbar padrão (canal de volta) */
-.rk-topbar{
+/* =========================================================
+   2) Topbar (se algum módulo usar)
+   ========================================================= */
+body.rk-scope .rk-topbar{
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -31,34 +51,36 @@ body{
   padding: 10px 14px;
 }
 
-.rk-brand{
+body.rk-scope .rk-brand{
   display:flex;
   align-items:center;
   gap: 10px;
   min-width: 180px;
 }
 
-.rk-brand img{ height: 34px; width: auto; }
-.rk-title{
+body.rk-scope .rk-brand img{ height: 34px; width: auto; }
+
+body.rk-scope .rk-title{
   font-weight: 700;
   letter-spacing: .2px;
   font-size: 14px;
   line-height: 1.1;
 }
-.rk-subtitle{
+
+body.rk-scope .rk-subtitle{
   font-size: 12px;
   color: var(--rk-muted);
   margin-top: 2px;
 }
 
-.rk-actions{
+body.rk-scope .rk-actions{
   display:flex;
   gap: 8px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
-.rk-btn{
+body.rk-scope .rk-btn{
   appearance: none;
   border: 1px solid var(--rk-orange);
   background: var(--rk-orange);
@@ -71,24 +93,28 @@ body{
   transition: .15s ease;
   font-size: 13px;
 }
-.rk-btn:hover{ background: var(--rk-orange-2); border-color: var(--rk-orange-2); }
-.rk-btn-outline{
+body.rk-scope .rk-btn:hover{ background: var(--rk-orange-2); border-color: var(--rk-orange-2); }
+
+body.rk-scope .rk-btn-outline{
   background: transparent;
   color: var(--rk-orange);
 }
-.rk-btn-outline:hover{
+body.rk-scope .rk-btn-outline:hover{
   background: var(--rk-orange);
   color:#111;
 }
 
-/* Marca d’água opcional no MAIN */
-main.rk-main{
+/* =========================================================
+   3) Main com marca d’água (igual ao seu padrão)
+   ========================================================= */
+body.rk-scope main.rk-main{
   position: relative;
-  min-height: calc(100vh - 58px);
+  min-height: calc(100vh - 0px);
   background: radial-gradient(circle at top, #000 0%, #000 70%);
   overflow: hidden;
 }
-main.rk-main::before{
+
+body.rk-scope main.rk-main::before{
   content:"";
   position:absolute;
   inset:0;
@@ -96,75 +122,114 @@ main.rk-main::before{
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 360px auto;
-  opacity: .35;
+  opacity: .10; /* mais suave */
   pointer-events:none;
 }
-main.rk-main > *{
+
+body.rk-scope main.rk-main > *{
   position: relative;
   z-index: 1;
 }
 
-/* Padrão Rodacoop “laranja” em cima do Bootstrap */
-.btn-primary, .btn-success{
+/* =========================================================
+   4) Overrides Bootstrap (só dentro do tema)
+   ========================================================= */
+body.rk-scope .btn-primary,
+body.rk-scope .btn-success{
   background-color: var(--rk-orange) !important;
   border-color: var(--rk-orange) !important;
   color: #fff !important;
 }
-.btn-primary:hover, .btn-success:hover{
+body.rk-scope .btn-primary:hover,
+body.rk-scope .btn-success:hover{
   background-color: var(--rk-orange-2) !important;
   border-color: var(--rk-orange-2) !important;
 }
-.btn-outline-primary, .btn-outline-success, .btn-outline-info{
+body.rk-scope .btn-outline-primary,
+body.rk-scope .btn-outline-success,
+body.rk-scope .btn-outline-info{
   color: var(--rk-orange) !important;
   border-color: var(--rk-orange) !important;
 }
-.btn-outline-primary:hover, .btn-outline-success:hover, .btn-outline-info:hover{
+body.rk-scope .btn-outline-primary:hover,
+body.rk-scope .btn-outline-success:hover,
+body.rk-scope .btn-outline-info:hover{
   background-color: var(--rk-orange) !important;
   color: #fff !important;
 }
 
-/* Cards / alerts padrão */
-main.rk-main .card,
-main.rk-main .alert{
+body.rk-scope .progress-bar{ background-color: var(--rk-orange) !important; }
+
+/* =========================================================
+   5) O visual "bonito" (Fechamento de Rota)
+   Classes: brand-*, btn-orange/black, badge-orange, etc.
+   ========================================================= */
+body.rk-scope .brand-title{
+  color: var(--brand-black);
+  font-weight: 900;
+  letter-spacing: .3px;
+}
+
+body.rk-scope .brand-subtle{
+  color: rgba(15,15,16,.65);
+}
+
+body.rk-scope .brand-card{
+  border: 1px solid var(--brand-border);
+  box-shadow: 0 6px 18px rgba(15,15,16,.06);
+  border-radius: 12px;
+}
+
+body.rk-scope .brand-hr{
+  border-top: 1px solid rgba(255,106,0,.22);
+}
+
+/* Botões do “fechamento” */
+body.rk-scope .btn-orange{
+  background: var(--brand-orange);
+  border-color: var(--brand-orange);
+  color: #fff;
+  font-weight: 800;
+}
+body.rk-scope .btn-orange:hover{
+  background: var(--brand-orange-2);
+  border-color: var(--brand-orange-2);
+  color: #fff;
+}
+
+body.rk-scope .btn-black{
+  background: var(--brand-black);
+  border-color: var(--brand-black);
+  color:#fff;
+  font-weight: 800;
+}
+body.rk-scope .btn-black:hover{
+  background: #000;
+  border-color: #000;
+  color:#fff;
+}
+
+body.rk-scope .badge-orange{
+  background: var(--brand-orange);
+  color:#fff;
+  font-weight:800;
+}
+
+/* Inputs com foco laranja (igual ao bonito) */
+body.rk-scope .form-control:focus{
+  border-color: rgba(255,106,0,.55);
+  box-shadow: 0 0 0 .2rem rgba(255,106,0,.18);
+}
+
+/* Cards / alerts (não forçar globalmente; só tema) */
+body.rk-scope .card,
+body.rk-scope .alert{
   background-color: var(--rk-panel) !important;
   border-left: 4px solid var(--rk-orange) !important;
   color: #212529 !important;
 }
 
-
-/* Sidebar clara */
-.sidebar{
+/* Sidebar clara (se algum módulo usar) */
+body.rk-scope .sidebar{
   background: linear-gradient(180deg, #fff6eb 0%, #fbe2c6 100%) !important;
-  border-right: 4px solid var(--rk-orange) !important;
-}
-.sidebar, .sidebar *{ color: #212529 !important; }
-
-/* Títulos destacados */
-main.rk-main h2,
-main.rk-main h3,
-main.rk-main h4,
-main.rk-main h5{ color: var(--rk-orange) !important; }
-.progress-bar{ background-color: var(--rk-orange) !important; }
-
-/* Utilitários */
-.rk-hide{ display:none !important; }
-/* Botão flutuante voltar */
-.rk-back-btn{
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: var(--rk-orange);
-  color: #111;
-  font-weight: 700;
-  padding: 10px 14px;
-  border-radius: 12px;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-  transition: 0.2s ease;
-  z-index: 9999;
-}
-
-.rk-back-btn:hover{
-  background: var(--rk-orange-2);
-  transform: translateY(-2px);
-}
+  border-right: 4

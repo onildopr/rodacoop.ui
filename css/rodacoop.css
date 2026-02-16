@@ -358,7 +358,7 @@ body.rk-scope .rk-back-btn:hover{
     border-radius: 10px;
 }
 #conference-interface .list-section{
-  max-height: calc(100vh - 360px); /* ajuste esse 360px conforme seus títulos/botões */
+  max-height: 400px;
   overflow-y: auto;
 }
 

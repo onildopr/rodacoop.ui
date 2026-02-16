@@ -232,4 +232,125 @@ body.rk-scope .alert{
 /* Sidebar clara (se algum módulo usar) */
 body.rk-scope .sidebar{
   background: linear-gradient(180deg, #fff6eb 0%, #fbe2c6 100%) !important;
-  border-right: 4
+  border-right: 4px solid var(--rk-orange) !important;
+}
+body.rk-scope .sidebar,
+body.rk-scope .sidebar *{ color: #212529 !important; }
+
+/* Títulos destacados (no tema) */
+body.rk-scope h2,
+body.rk-scope h3,
+body.rk-scope h4,
+body.rk-scope h5{ color: var(--rk-orange) !important; }
+
+/* =========================================================
+   6) Tela final (print 1700x900) do HTML bonito
+   ========================================================= */
+body.rk-scope .final-screen{
+  width:1700px;
+  height:900px;
+  background:#fff;
+  border:2px solid rgba(255,106,0,0.22);
+  border-radius:12px;
+  padding:14px;
+  box-sizing:border-box;
+  margin: 0 auto;
+}
+
+body.rk-scope .final-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+body.rk-scope .final-title{
+  font-size:20px;
+  font-weight:900;
+  color: var(--brand-black);
+}
+body.rk-scope .final-sub{ font-size:12px; opacity:0.75; }
+
+body.rk-scope .final-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap:10px;
+  height: calc(900px - 14px - 14px - 56px);
+}
+
+body.rk-scope .final-card{
+  border:1px solid rgba(255,106,0,0.18);
+  border-radius:12px;
+  padding:10px;
+  box-sizing:border-box;
+  overflow:hidden;
+  background: linear-gradient(180deg, rgba(255,106,0,0.05), rgba(0,0,0,0));
+}
+
+body.rk-scope .final-card-title{
+  font-size:14px;
+  font-weight:900;
+  margin-bottom:6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color: var(--brand-gray);
+}
+
+body.rk-scope .final-list{
+  height: calc(100% - 22px);
+  font-size:10px;
+  line-height:1.15;
+  column-count:4;
+  column-gap:12px;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+body.rk-scope .final-list .id-item{ display:block; padding:1px 0; }
+body.rk-scope .final-footer{ margin-top:8px; font-size:11px; opacity:0.7; }
+
+/* =========================================================
+   7) Fechamento Diário (layout bonito)
+   ========================================================= */
+body.rk-scope #fechamento-interface{
+  padding: 18px 0 28px 0;
+  background: linear-gradient(180deg, rgba(255,106,0,0.06), rgba(0,0,0,0));
+}
+body.rk-scope #fechamento-interface .fd-wrap{
+  max-width: 1850px;
+  margin: 0 auto;
+}
+body.rk-scope .fd-sticky {
+  position: sticky;
+  top: 12px;
+}
+
+/* =========================================================
+   8) Botão flutuante voltar (padrão novo)
+   ========================================================= */
+body.rk-scope .rk-back-btn{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: var(--brand-orange);
+  color: #fff;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  transition: 0.2s ease;
+  z-index: 9999;
+}
+body.rk-scope .rk-back-btn:hover{
+  background: var(--brand-orange-2);
+  transform: translateY(-2px);
+  color:#fff;
+}
+
+/* =========================================================
+   9) Utilitários
+   ========================================================= */
+body.rk-scope .rk-hide{ display:none !important; }
